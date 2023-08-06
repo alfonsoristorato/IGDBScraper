@@ -14,16 +14,13 @@ repositories {
 
 
 dependencies {
-    implementation serviceLibs.spring.boot.starter
-    implementation serviceLibs.spring.kafka
-    implementation serviceLibs.reactor
-    implementation serviceLibs.reactor.kafka
-    implementation serviceLibs.jackson.databind
-    implementation serviceLibs.spring.data.cassandra
+    implementation serviceLibs.spring.boot.starter.simple
+    implementation serviceLibs.spring.dotenv
+    implementation serviceLibs.spring.boot.starter.webflux
+    implementation serviceLibs.hibernate.validator
 
     testImplementation testLibs.assertj.core
     testImplementation testLibs.spring.boot.starter.test
-    testImplementation testLibs.reactor.test
 }
 
 test {

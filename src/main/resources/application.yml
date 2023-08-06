@@ -1,0 +1,7 @@
+downstreams:
+  twitch:
+    baseUrl: "${TWITCH_BASE_URL}"
+    clientId: "${TWITCH_CLIENT_ID}"
+    clientSecrets: "${TWITCH_CLIENT_SECRETS}"
+    grantType: "${TWITCH_GRANT_TYPE}"
+

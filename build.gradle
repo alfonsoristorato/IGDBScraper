@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    alias serviceLibs.plugins.spring.boot
+    alias serviceLibs.plugins.spring.dependency.management
+}
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+group = 'com.alfonsoristorato'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation serviceLibs.spring.boot.starter
+    implementation serviceLibs.spring.kafka
+    implementation serviceLibs.reactor
+    implementation serviceLibs.reactor.kafka
+    implementation serviceLibs.jackson.databind
+    implementation serviceLibs.spring.data.cassandra
+
+    testImplementation testLibs.assertj.core
+    testImplementation testLibs.spring.boot.starter.test
+    testImplementation testLibs.reactor.test
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,12 @@
+rootProject.name = 'IGDBScraper'
+dependencyResolutionManagement {
+    versionCatalogs {
+        serviceLibs {
+            from(files('service.libs.versions.toml'))
+        }
+        testLibs {
+            from(files('test.libs.versions.toml'))
+        }
+    }
+}
+

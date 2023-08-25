@@ -8,7 +8,7 @@ import org.springframework.web.service.annotation.PostExchange;
 import reactor.core.publisher.Mono;
 
 @HttpExchange(accept = MediaType.APPLICATION_JSON_VALUE, contentType = MediaType.APPLICATION_JSON_VALUE)
-public interface TwitchAuthenticator {
+public interface TwitchAuthenticatorClient {
     @PostExchange
     Mono<TwitchResponse> authenticate(
             @RequestParam("client_id") String clientId,

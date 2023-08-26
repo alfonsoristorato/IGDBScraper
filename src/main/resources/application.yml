@@ -2,7 +2,7 @@ downstreams:
   twitch:
     baseUrl: "${TWITCH_BASE_URL}"
     clientId: "${TWITCH_CLIENT_ID}"
-    clientSecrets: "${TWITCH_CLIENT_SECRETS}"
+    clientSecret: "${TWITCH_CLIENT_SECRET}"
     grantType: "${TWITCH_GRANT_TYPE}"
   igdb:
     baseUrl: "${IGDB_BASE_URL}"

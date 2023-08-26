@@ -1,7 +1,7 @@
 package com.alfonsoristorato.igdbscraper.service;
 
-import com.alfonsoristorato.igdbscraper.service.igdb.IgdbConfigProperties;
-import com.alfonsoristorato.igdbscraper.service.igdb.IgdbClient;
+import com.alfonsoristorato.igdbscraper.service.igdb.IGDBConfigProperties;
+import com.alfonsoristorato.igdbscraper.service.igdb.IGDBClient;
 import com.alfonsoristorato.igdbscraper.service.twitch.TwitchAuthenticatorClient;
 import com.alfonsoristorato.igdbscraper.service.twitch.TwitchConfigProperties;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +13,9 @@ import org.springframework.web.service.invoker.HttpServiceProxyFactory;
 @Configuration
 public class WebClientConfig {
     private final TwitchConfigProperties twitchConfigProperties;
-    private final IgdbConfigProperties igdbConfigProperties;
+    private final IGDBConfigProperties igdbConfigProperties;
 
-    public WebClientConfig(TwitchConfigProperties twitchConfigProperties, IgdbConfigProperties igdbConfigProperties) {
+    public WebClientConfig(TwitchConfigProperties twitchConfigProperties, IGDBConfigProperties igdbConfigProperties) {
         this.twitchConfigProperties = twitchConfigProperties;
         this.igdbConfigProperties = igdbConfigProperties;
     }
@@ -34,7 +34,7 @@ public class WebClientConfig {
     }
 
     @Bean
-    IgdbClient igdbClient() {
+    IGDBClient igdbClient() {
         WebClient webClient = WebClient.builder()
                 .baseUrl(igdbConfigProperties.baseUrl())
                 .build();
@@ -43,6 +43,6 @@ public class WebClientConfig {
                 HttpServiceProxyFactory
                         .builder(WebClientAdapter.forClient(webClient))
                         .build();
-        return httpServiceProxyFactory.createClient(IgdbClient.class);
+        return httpServiceProxyFactory.createClient(IGDBClient.class);
     }
 }

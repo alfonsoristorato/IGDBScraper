@@ -11,7 +11,7 @@ import java.util.List;
 public record TwitchConfigProperties(
         @NotBlank String baseUrl,
         @NotBlank String clientId,
-        @NotEmpty List<String> clientSecrets,
+        @NotEmpty String clientSecret,
         @NotBlank String grantType
 ) {
 }

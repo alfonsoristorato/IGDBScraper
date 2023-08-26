@@ -18,6 +18,7 @@ dependencies {
     implementation serviceLibs.spring.dotenv
     implementation serviceLibs.spring.boot.starter.webflux
     implementation serviceLibs.hibernate.validator
+    implementation serviceLibs.guava
 
     testImplementation testLibs.assertj.core
     testImplementation testLibs.spring.boot.starter.test

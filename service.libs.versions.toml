@@ -8,6 +8,7 @@ hibernate-validator                         = "8.0.1.Final"
 commons-lang3                               = "3.12.0"
 reactor-kafka                               = "1.3.18"
 jackson-databind                            = "2.15.2"
+guava                                       = "32.1.2-jre"
 
 [libraries]
 spring-boot-starter-simple                  = { module = "org.springframework.boot:spring-boot-starter" }
@@ -21,7 +22,7 @@ hibernate-validator                         = { module = "org.hibernate.validato
 commons-lang3                               = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
 reactor-kafka                               = { module = "io.projectreactor.kafka:reactor-kafka", version.ref = "reactor-kafka" }
 jackson-databind                            = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson-databind"}
-
+guava                                       = { module = "com.google.guava:guava", version.ref = "guava"}
 
 [plugins]
 spring-boot                                 = { id = "org.springframework.boot", version.ref = "spring-boot"}

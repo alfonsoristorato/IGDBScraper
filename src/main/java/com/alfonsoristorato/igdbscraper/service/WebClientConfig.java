@@ -37,6 +37,10 @@ public class WebClientConfig {
     IGDBClient igdbClient() {
         WebClient webClient = WebClient.builder()
                 .baseUrl(igdbConfigProperties.baseUrl())
+                .codecs(codecs -> codecs
+                        .defaultCodecs()
+                        .maxInMemorySize(1000 * 1024))
+
                 .build();
 
         HttpServiceProxyFactory httpServiceProxyFactory =

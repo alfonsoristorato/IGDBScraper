@@ -6,4 +6,7 @@ downstreams:
     grantType: "${TWITCH_GRANT_TYPE}"
   igdb:
     baseUrl: "${IGDB_BASE_URL}"
+spring:
+  codec:
+    max-in-memory-size: 100MB
 

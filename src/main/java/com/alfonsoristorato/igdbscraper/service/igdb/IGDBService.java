@@ -67,11 +67,11 @@ public class IGDBService {
                                     .flatMap(igdbHeaders -> igdbClient.requestGameData(
                                             igdbHeaders.clientId(),
                                             igdbHeaders.authorization(),
-                                            String.format("fields name; limit 500; sort id asc; offset %s;", offset.getAndAdd(500))))
+                                            String.format("fields name, category, cover, first_release_date, genres, platforms, status, storyline, summary, websites; limit 500; sort id asc; offset %s;", offset.getAndAdd(500))))
                                     .doOnError(System.out::println)
                                     .subscribeOn(Schedulers.parallel())
                             )
-//                          .doOnNext(System.out::println)
+                          .doOnNext(System.out::println)
                             .doOnError(System.out::println)
                             .subscribe(el -> {
                                 if (offset.get() > lastAvailableId) System.out.println(timer.stop().elapsed(TimeUnit.SECONDS));
